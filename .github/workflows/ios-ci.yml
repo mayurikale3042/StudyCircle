@@ -14,6 +14,9 @@ jobs:
     steps:
       - name: Get the code
         uses: actions/checkout@v6
+        
+      - name: Select Xcode 27.2
+        run: sudo xcode-select -s /Applications/Xcode_27.2.app
 
       - name: Build and run tests
         run: xcodebuild test -project Study_Circle/Study_Circle.xcodeproj -scheme Study_Circle -destination 'platform=iOS Simulator,name=iPhone 17,OS=latest' CODE_SIGNING_ALLOWED=NO
